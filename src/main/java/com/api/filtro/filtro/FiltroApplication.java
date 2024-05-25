@@ -1,4 +1,4 @@
-package com.example.filtro.filtro;
+package com.api.filtro.filtro;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

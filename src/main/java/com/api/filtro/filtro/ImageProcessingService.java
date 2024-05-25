@@ -1,4 +1,4 @@
-package com.example.filtro.filtro;
+package com.api.filtro.filtro;
 
 import java.awt.Color;
 
