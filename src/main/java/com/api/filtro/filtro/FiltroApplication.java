@@ -11,11 +11,10 @@ public class FiltroApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FiltroApplication.class, args);
 
-
 		String diretorio = "/home/meiryanne/Área de Trabalho/filtro";
 
 		try {
-			RemoveComments.removerComentarios(diretorio);
+			RemoveComments.removeComments(diretorio);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -5,20 +5,20 @@ import java.nio.file.*;
 
 public class RemoveComments {
 
-  public static void removerComentarios(String diretorio) throws IOException {
+  public static void removeComments(String diretorio) throws IOException {
     Files.walk(Paths.get(diretorio))
         .filter(Files::isRegularFile)
         .filter(path -> path.toString().endsWith(".java"))
         .forEach(path -> {
           try {
-            removerComentariosDeArquivo(path);
+            removeCommentsFromFile(path);
           } catch (IOException e) {
             e.printStackTrace();
           }
         });
   }
 
-  public static void removerComentariosDeArquivo(Path path) throws IOException {
+  public static void removeCommentsFromFile(Path path) throws IOException {
     BufferedReader reader = new BufferedReader(new FileReader(path.toFile()));
     StringBuilder builder = new StringBuilder();
     String line;
