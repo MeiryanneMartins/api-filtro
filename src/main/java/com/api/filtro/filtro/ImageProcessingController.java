@@ -1,15 +1,15 @@
 package com.api.filtro.filtro;
 
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
-
 import org.springframework.http.MediaType;
-import java.io.ByteArrayInputStream;
-
 import org.springframework.web.bind.annotation.*;
+
+
+
 
 @RestController
 @RequestMapping("/api/images")
