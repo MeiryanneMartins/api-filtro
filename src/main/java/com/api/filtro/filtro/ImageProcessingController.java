@@ -4,9 +4,14 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+
 import javax.imageio.ImageIO;
+
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 
 
@@ -25,9 +30,7 @@ public class ImageProcessingController {
   public byte[] processNegativeRGB(@RequestBody byte[] imageData) throws IOException {
     BufferedImage image = ImageIO.read(new ByteArrayInputStream(imageData));
 
-    BufferedImage adjustedImage = imageProcessingService.adjustTone(image, 10, 20);
-
-    BufferedImage processedImage = imageProcessingService.processNegativeRGB(adjustedImage);
+    BufferedImage processedImage = imageProcessingService.processNegativeRGB(image);
 
     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
     ImageIO.write(processedImage, "png", outputStream);
